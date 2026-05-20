@@ -1,0 +1,130 @@
+$spacing: .25rem;
+$color1:oklch(.93 .034 272.788);
+$color2:oklch(.985 .002 247.839);
+$boxShadow: 0 0 10px #ddd;
+$borderRadius:1rem;
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft JhengHei';
+    background-color: $color2;
+}
+
+$xs: 375px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xl: 1920px;
+
+@mixin rwd($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+
+.headerBox {
+    width: 100%;
+    height: 93px;
+    background-color: #fff;
+    box-shadow: $boxShadow;
+    .headerBoxInner {
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include rwd($lg) {
+          width: 100%;
+        }
+    }
+}
+
+.content {
+    width: 1280px;
+    height: calc(100vh - 93px);
+    margin: 0 auto;
+    padding: 4rem 0;
+    @include rwd($lg) {
+      width: 100%;
+    }
+
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-color: $color1;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 98;
+    .loginBox {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .loginBoxInner {
+        border-radius: $borderRadius;
+        padding: calc($spacing * 10);
+        background-color: #fff;
+        margin-bottom: 1rem;
+    }
+    .loginBoxInnerWelcome {
+    }
+    .loginBoxInnerNote {
+    }
+}
+
+.home {
+    .homeCard {
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: $boxShadow;
+        border-radius: $borderRadius;
+    }
+    .homeCardTitle {
+      
+    }
+    .homeCardValue {
+
+    }
+}
+
+.userCard {
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+  margin-bottom: 2rem;
+  .userCardBox {
+
+  }
+  .userCardBoxTitle {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  .userCardBoxTitleName {
+    margin-right: 1rem;
+  }
+  .userCardBoxTitleStatus {
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: $borderRadius;
+    color:#fff;
+  }
+  .userCardBoxInfo {
+    color:#aaa;
+    margin-bottom: 1rem;
+  }
+  .userCardBoxMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
